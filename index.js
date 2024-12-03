@@ -1,14 +1,9 @@
 const fs = require("fs");
 
-// HELPER FUNCTIONS
-function processFileLines(filename) {
-  return fs.readFileSync(filename, { encoding: "utf8" }).trim().split("\n");
-}
-
 // 01 ============================
 (function advent01() {
   try {
-    const lines = processFileLines("input_files/input01.txt");
+    const lines = fs.readFileSync("input_files/input01.txt", { encoding: "utf8" }).trim().split("\n");
     let column1 = [];
     let column2 = [];
     let result = 0;
@@ -45,7 +40,7 @@ function processFileLines(filename) {
 (function advent02() {
   console.log();
   try {
-    const lines = processFileLines("input_files/input02.txt");
+    const lines = fs.readFileSync("input_files/input01.txt", { encoding: "utf8" }).trim().split("\n");
     let safe1 = 0;
     let safe2 = 0;
 
