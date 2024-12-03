@@ -6,9 +6,7 @@ function processFileLines(filename) {
 }
 
 // 01 ============================
-advent01();
-
-function advent01() {
+(function advent01() {
   try {
     const lines = processFileLines("input_files/input01.txt");
     let column1 = [];
@@ -41,13 +39,11 @@ function advent01() {
   } catch (err) {
     console.error(err);
   }
-}
+})();
 
 // 02 ============================
-console.log();
-advent02();
-
-function advent02() {
+(function advent02() {
+  console.log();
   try {
     const lines = processFileLines("input_files/input02.txt");
     let safe1 = 0;
@@ -68,7 +64,7 @@ function advent02() {
   } catch (err) {
     console.error(err);
   }
-}
+})();
 
 // Compare sorted arrays to original to confirm increasing or decreasing. Check diff between each element and next.
 function checkSafety(numbers) {
@@ -99,10 +95,8 @@ function problemDampener(numbers) {
 }
 
 // 03 ============================
-console.log();
-advent03();
-
-function advent03() {
+(function advent03() {
+  console.log();
   try {
     const fileText = fs.readFileSync("input_files/input03.txt", { encoding: "utf8" });
 
@@ -136,4 +130,4 @@ function advent03() {
   } catch (err) {
     console.error(err);
   }
-}
+})();
