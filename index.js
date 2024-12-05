@@ -11,8 +11,8 @@ const fs = require("fs");
     // Create arrays containing each column.
     lines.forEach((line) => {
       let numbers = line.trim().split(/\s+/).map(Number);
-      if (numbers.length >= 1) column1.push(numbers[0]);
-      if (numbers.length >= 2) column2.push(numbers[1]);
+      column1.push(numbers[0]);
+      column2.push(numbers[1]);
     });
 
     column1.sort();
