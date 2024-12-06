@@ -56,4 +56,4 @@ function problemDampener(numbers) {
   return false;
 }
 
-module.exports = (main);
+module.exports = main;

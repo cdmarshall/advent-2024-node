@@ -19,6 +19,7 @@ function main() {
   let rules = [];
   let pageUpdates = [];
 
+  // Parse rules and page updates into separate array.
   fileLines.forEach((line) => {
     if (line.includes("|")) {
       rules.push(line.split("|").map(Number));
@@ -28,9 +29,11 @@ function main() {
   });
 
   pageUpdates.forEach((update) => {
+    // If the page update is passes rules check, add middle number to result.
     if (checkRules(rules, update))
       result += update[Math.floor(update.length / 2)];
     else {
+      // If the page update fails rules check, run rules check until update passes.
       let valid = false;
       while(!valid) {
         valid = checkRules(rules, update);
@@ -49,6 +52,7 @@ function checkRules(rules, update) {
       let firstNumPos = update.indexOf(rules[j][0]);
       let secondNumPos = update.indexOf(rules[j][1]);
       if (firstNumPos !== -1 && secondNumPos !== -1) {
+        // If rule check fails, swap the two numbers and return false to throw the array up to the branch with the while loop.
         if (firstNumPos > secondNumPos) {
           swapElements(update, firstNumPos, secondNumPos);
           return false;

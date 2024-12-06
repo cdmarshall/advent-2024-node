@@ -103,4 +103,4 @@ function searchX(array, x, y) {
   return 0;
 }
 
-module.exports = (main);
+module.exports = main;
